@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lijiliang/react-frame/issues"
   },
-  "homepage": "https://github.com/lijiliang/react-frame#readme"
+  "homepage": "https://github.com/lijiliang/react-frame#readme",
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
 }
