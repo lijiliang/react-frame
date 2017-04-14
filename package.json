@@ -1,0 +1,19 @@
+{
+  "name": "react-frame",
+  "version": "1.0.0",
+  "description": "React开发SPA脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijiliang/react-frame.git"
+  },
+  "author": "https://github.com/lijiliang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lijiliang/react-frame/issues"
+  },
+  "homepage": "https://github.com/lijiliang/react-frame#readme"
+}
