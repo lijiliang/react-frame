@@ -34,7 +34,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: 'babel-loader'
+                use: ['babel-loader', 'react-hot-loader'],
+                exclude: /node_modules/
             },
             // {
             //     test: /\.less$/,

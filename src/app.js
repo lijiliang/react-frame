@@ -1,7 +1,7 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider} from 'react-redux';
-import { creatStore } from 'redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
 
 // let store = creatStore();
 //
@@ -22,4 +22,4 @@ import './less/common.less';
 //
 // bb();
 // alert('asdf')
-console.log('asd')
+console.log('asdasd艺术')

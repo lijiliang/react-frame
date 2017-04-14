@@ -15,6 +15,16 @@ config.output.chunkFilename = '[id].js';
 config.devtool = SOURCE_MAP ? 'eval-source-map' : false;
 config.output.publicPath = '/';
 
+// 添加热重载相关的代码
+config.entry.app = [
+    // 开启react代码的模块热替换（HMR）
+    // 'react-hot-loader/patch',
+    'eventsource-polyfill',
+    'webpack-hot-middleware/client?reload=true',
+    'webpack/hot/only-dev-server',
+    config.entry.app
+];
+
 // 开发环境下直接内嵌 CSS 以支持热替换
 config.module.rules.push(
     {
@@ -26,14 +36,6 @@ config.module.rules.push(
         ]
     }
 );
-
-// 添加热重载相关的代码
-config.entry.app = [
-    'eventsource-polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    'webpack/hot/only-dev-server',
-    config.entry.app
-];
 
 config.plugins.push(
     new webpack.optimize.OccurrenceOrderPlugin(),
