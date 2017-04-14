@@ -16,10 +16,11 @@ module.exports = {
     },
     output: {
         path: path.join(commonPath.dist, 'static'),
-        filename: '[name].js',
+        // filename: '[name].js',
         publicPath: '/static/'
     },
     resolve: {
+        modules: ['node_modules'],
         extensions: ['.js', '.jsx'],
         alias: {
             /**
@@ -28,9 +29,6 @@ module.exports = {
             jquery: 'jquery'
         }
     },
-    // resolveLoader: {
-    //     root: path.join(commonPath.rootPath, 'node_modules')
-    // },
     // 模块 - 各种加载器
     module: {
         rules: [
@@ -55,8 +53,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        // 提取 CSS 到单独的文件中
-        new ExtractTextPlugin('[name].css'),
-    ]
+    // 插件
+    plugins: []
 };
