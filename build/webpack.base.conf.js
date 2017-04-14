@@ -12,7 +12,7 @@ module.exports = {
         /**
          * [vendor 框架 / 类库 分离打包]
          */
-        vendor: ['react', 'react-dom', 'lodash', 'redux', 'react-redux']
+        vendor: ['react', 'react-dom', 'lodash', 'redux', 'react-redux'],
     },
     output: {
         path: path.join(commonPath.dist, 'static'),
@@ -36,21 +36,21 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 use: 'babel-loader'
             },
-            {
-                test: /\.less$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: { sourceMap: true, importLoaders: 1}
-                        },
-                        {
-                            loader: 'less-loader', options: { sourceMap: true }
-                        }
-                    ]
-                })
-            }
+            // {
+            //     test: /\.less$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [
+            //             {
+            //                 loader: 'css-loader',
+            //                 options: { sourceMap: true, importLoaders: 1}
+            //             },
+            //             {
+            //                 loader: 'less-loader', options: { sourceMap: true }
+            //             }
+            //         ]
+            //     })
+            // }
         ]
     },
     // 插件

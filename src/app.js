@@ -21,5 +21,5 @@ import './less/common.less';
 // }
 //
 // bb();
-console.log('asdf')
 // alert('asdf')
+console.log('asd')
