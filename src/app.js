@@ -15,11 +15,12 @@ import { Root } from './containers/root';
 //     document.getElementById('root')
 // )
 // console.log('asdf')
-import './less/common.less';
+import './assets/less/common.less';
+import smaller from './assets/img/larger.png';
 
 ReactDOM.render(
     <Root/>,
   document.getElementById('root')
 );
-
+console.log(smaller);
 // console.log('asdasd艺术')

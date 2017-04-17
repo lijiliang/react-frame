@@ -48,21 +48,22 @@ module.exports = {
                 //     }
                 // }]
             },
-            // {
-            //     test: /\.less$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: 'style-loader',
-            //         use: [
-            //             {
-            //                 loader: 'css-loader',
-            //                 options: { sourceMap: true, importLoaders: 1}
-            //             },
-            //             {
-            //                 loader: 'less-loader', options: { sourceMap: true }
-            //             }
-            //         ]
-            //     })
-            // }
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 10240, // 10KB 以下使用 base64
+                    name: 'img/[name]-[hash:8].[ext]'
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 10240,
+                    name: 'fonts/[name]-[hash:8].[ext]'
+                }
+            }
         ]
     },
     // 插件
