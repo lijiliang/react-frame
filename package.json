@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node build/dev.js",
     "dev": "webpack --config ./build/webpack.dev.conf.js",
+    "build": "webpack --config ./build/webpack.prod.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,14 @@
   },
   "homepage": "https://github.com/lijiliang/react-frame#readme",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-meteor": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
     "connect-history-api-fallback": "^1.3.0",
@@ -31,7 +38,8 @@
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
-    "react-hot-loader": "^1.3.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "redbox-react": "^1.3.6",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.1",

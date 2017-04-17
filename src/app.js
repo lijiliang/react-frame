@@ -1,7 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { Router } from 'react-router'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router';
+
+// import { AppContainer } from 'react-hot-loader';
+import { Root } from './containers/root';
 
 // let store = creatStore();
 //
@@ -11,15 +14,12 @@ import { Router } from 'react-router'
 //     </Provider>,
 //     document.getElementById('root')
 // )
+// console.log('asdf')
 import './less/common.less';
-// function aa(){
-//     console.log('aa')
-// }
-//
-// function bb(){
-//     console.log('bb')
-// }
-//
-// bb();
-// alert('asdf')
-console.log('asdasd艺术')
+
+ReactDOM.render(
+    <Root/>,
+  document.getElementById('root')
+);
+
+// console.log('asdasd艺术')

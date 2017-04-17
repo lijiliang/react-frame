@@ -18,7 +18,7 @@ config.output.publicPath = '/';
 // 添加热重载相关的代码
 config.entry.app = [
     // 开启react代码的模块热替换（HMR）
-    // 'react-hot-loader/patch',
+    'react-hot-loader/patch',
     'eventsource-polyfill',
     'webpack-hot-middleware/client?reload=true',
     'webpack/hot/only-dev-server',

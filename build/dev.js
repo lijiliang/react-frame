@@ -18,6 +18,8 @@ app.use('/static', express.static(commonPath.staticDir));
 app.use(history());
 
 app.use(webpackDevMiddleware(compiler, {
+    hot: true,
+    stats: { colors: true },
     noInfo: true,
     publicPath: config.output.publicPath
 }));

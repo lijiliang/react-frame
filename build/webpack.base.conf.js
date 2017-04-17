@@ -32,10 +32,21 @@ module.exports = {
     // 模块 - 各种加载器
     module: {
         rules: [
+            // https://github.com/gaearon/react-hot-loader/issues/218
             {
                 test: /\.(js|jsx)$/,
-                use: ['babel-loader', 'react-hot-loader'],
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader'
+                }]
+                // use: [{
+                //     loader: 'react-hot-loader/webpack'
+                // }, {
+                //     loader: 'babel-loader',
+                //     options: {
+                //         presets: [['es2015', {modules: false}], 'react']
+                //     }
+                // }]
             },
             // {
             //     test: /\.less$/,
