@@ -12,6 +12,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
 const SOURCE_MAP = false;
 
+// 环境变量获取方法  process.env.NODE_ENV
+
 // 配置config
 config.output.filename = '[name].[chunkhash:8].js';
 config.output.chunkFilename = '[id].[chunkhash:8].js';
@@ -20,6 +22,7 @@ config.devtool = SOURCE_MAP ? 'source-map' : false;
 config.module.rules.push(
     {
         test: /\.less$/,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
@@ -29,6 +32,9 @@ config.module.rules.push(
                         importLoaders: 1,
                         minimize: true
                     }
+                },
+                {
+                    loader: 'postcss-loader'
                 },
                 {
                     loader: 'less-loader'
@@ -80,20 +86,35 @@ config.plugins.push(
         filename: '../index.html',
         template: commonPath.indexHTML
     }),
+    new webpack.LoaderOptionsPlugin({
+        options : {
+            postcss : function(){
+                return [
+                    require('autoprefixer')({
+                        broswers : ['last 5 versions']
+                    })
+                ];
+            }
+        }
+    })
     // 图片压缩
-    // new ImageminPlugin({
-    //     pngquant: {
-    //         quality: '90-100'
-    //     },
-    //     optipng: {
-    //         optimizationLevel: 5
-    //     }
-    // })
+    /*
+    new ImageminPlugin({
+        pngquant: {
+            quality: '90-100'
+        },
+        optipng: {
+            optimizationLevel: 5
+        }
+    }),
+
+    */
     // 利用tinypng 进行图片压缩，要用到key,每个月才能压缩500张 https://tinypng.com/developers
+    /*
     new tinyPngWebpackPlugin({
         key:'OLord53OFESyRWh1XYGBrUhoQIkKYd9R',
         relativePath: commonPath.dist + '/static/img/' // 文件的输出路径
     })
-
+    */
 );
 module.exports = config;

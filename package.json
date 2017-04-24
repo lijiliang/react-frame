@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/dev.js",
-    "dev": "webpack --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.prod.conf.js",
+    "dev": "NODE_ENV=development webpack --config ./build/webpack.dev.conf.js",
+    "build": "NODE_ENV=production webpack --config ./build/webpack.prod.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/lijiliang/react-frame#readme",
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
+    "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -43,7 +44,10 @@
     "imagemin-webpack-plugin": "^1.4.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
+    "postcss": "^5.2.17",
+    "postcss-less": "^0.15.0",
     "postcss-loader": "^1.3.3",
+    "precss": "^1.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "redbox-react": "^1.3.6",
     "style-loader": "^0.16.1",
