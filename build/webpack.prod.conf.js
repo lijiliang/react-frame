@@ -8,6 +8,8 @@ const commonPath = require('./commonPath');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
 const SOURCE_MAP = false;
 
 // 配置config
@@ -46,7 +48,12 @@ config.plugins.push(
     }),
     // 压缩JS
     new webpack.optimize.UglifyJsPlugin({
+        // 最紧凑的输出
+        beautify: false,
+        // 删除所有的注释
+        comments: false,
         compress: {
+            // 在UglifyJs删除没有用到的代码时不输出警告
             warnings: false
         }
     }),
@@ -72,6 +79,21 @@ config.plugins.push(
     new HtmlWebpackPlugin({
         filename: '../index.html',
         template: commonPath.indexHTML
+    }),
+    // 图片压缩
+    // new ImageminPlugin({
+    //     pngquant: {
+    //         quality: '90-100'
+    //     },
+    //     optipng: {
+    //         optimizationLevel: 5
+    //     }
+    // })
+    // 利用tinypng 进行图片压缩，要用到key,每个月才能压缩500张 https://tinypng.com/developers
+    new tinyPngWebpackPlugin({
+        key:'OLord53OFESyRWh1XYGBrUhoQIkKYd9R',
+        relativePath: commonPath.dist + '/static/img/' // 文件的输出路径
     })
+
 );
 module.exports = config;

@@ -3,8 +3,8 @@
  */
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const commonPath = require('./commonPath');   // 路径配置
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -22,6 +22,7 @@ module.exports = {
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx'],
+        // resolve.alias 配置路径映射
         alias: {
             /**
              * 自定义路径别名
@@ -35,10 +36,11 @@ module.exports = {
             // https://github.com/gaearon/react-hot-loader/issues/218
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
                 use: [{
-                    loader: 'babel-loader'
-                }]
+                    loader: 'babel-loader?cacheDirectory'
+                }],
+                exclude: /node_modules/,  // 优化babel 排除
+                include: path.join(commonPath.src),   //优化babel 打包范围
                 // use: [{
                 //     loader: 'react-hot-loader/webpack'
                 // }, {
@@ -67,5 +69,6 @@ module.exports = {
         ]
     },
     // 插件
-    plugins: []
+    plugins: [
+    ]
 };
