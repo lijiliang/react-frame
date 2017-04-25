@@ -67,14 +67,12 @@ npm run build
 * jQuery + BootStrap (UI)
 
 ***
-
 ## 部署
 在 `react-frame` 的命令窗口下，敲下 `npm run build`，将会在项目根目录下生成 `dist/`  
 > 您可以使用命令行静态资源服务器 [serve](https://github.com/tj/serve) ( `npm i serve -g` )，敲下 `serve dist/ -p [端口]` 来快速查看 build 后的项目  
 > 还可以自己配置一个`nginx`服务器进行快速便捷地实现静态资源服务器
 >
 > 关于生产环境下的部署与优化，后续加上。
-
 ***
 
 ## 参考
