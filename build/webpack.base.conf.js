@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const commonPath = require('./commonPath');   // 路径配置
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -70,5 +71,7 @@ module.exports = {
     },
     // 插件
     plugins: [
+        // 进度条
+        new NyanProgressPlugin()
     ]
 };
