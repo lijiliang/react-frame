@@ -78,3 +78,6 @@ npm run build
 ## 参考
 * [davezuko/react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
 * [探讨 React 项目目录结构](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)
+
+[react-router-doc]: http://react-guide.github.io/react-router-cn/
+[hot-loader]: https://github.com/gaearon/react-hot-loader
