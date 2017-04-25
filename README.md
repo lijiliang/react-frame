@@ -1,5 +1,8 @@
 # React React开发SPA脚手架
 
+React开发SPA脚手架。 Webapck / ES6 + Babel / Redux / React Router
+
+
 > ### 更新
 > 2017/4/24 &nbsp; 引入 `cross-env` 解决跨平台问题
 
