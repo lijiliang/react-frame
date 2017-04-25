@@ -6,6 +6,13 @@ React开发SPA脚手架。 Webapck / ES6 + Babel / Redux / React Router
 > ### 更新
 > 2017/4/24 &nbsp; 引入 `cross-env` 解决跨平台问题
 
+## 快速开始
+在开始前，希望您已通读如下资料
+
+* [React 文档][react-doc]
+* [Redux 文档][redux-doc]
+* [React Router 文档][react-router-doc]
+
 ## 安装
 ```shell
 $ git clone https://github.com/lijiliang/react-frame.git
@@ -54,12 +61,6 @@ npm run build
 ├── .gitignore       # （配置）需被 Git 忽略的文件（夹）
 ├── package.json     #  npm包配置文件
 ```
-## 快速开始
-在开始前，希望您已通读如下资料
-
-* [React 文档][react-doc]
-* [Redux 文档][redux-doc]
-* [React Router 文档][react-router-doc]
 
 ## 技术栈
 > 详情可参阅 `package.json`
