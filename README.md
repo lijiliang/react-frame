@@ -102,3 +102,4 @@ npm run build
 [hot-loader]: https://github.com/gaearon/react-hot-loader
 [react-hot-loader]: https://github.com/gaearon/react-hot-loader/issues/218
 [webpack 2 打包实战]: http://www.tuicool.com/articles/QJJRrmJ
+[webpack-in-action]:  https://github.com/fenivana/webpack-in-action
