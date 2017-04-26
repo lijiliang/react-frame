@@ -82,6 +82,15 @@ npm run build
 > 关于生产环境下的部署与优化，后续加上。
 ***
 
+## 记录
+> ps: 默认`.babelrc`配置文件
+```
+{
+  "presets": [["es2015", {"modules": false}], "react", "stage-0"],
+  "plugins": ["react-hot-loader/babel", "transform-runtime", "transform-decorators-legacy"]
+}
+
+```
 ## 参考
 * [davezuko/react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
 * [探讨 React 项目目录结构](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)

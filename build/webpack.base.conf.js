@@ -39,7 +39,13 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 use: [{
-                    loader: 'babel-loader?cacheDirectory'
+                    loader: 'react-hot-loader/webpack'
+                },{
+                    loader: 'babel-loader?cacheDirectory',
+                    options: {
+                        presets: [['es2015', {modules: false}], 'react', 'stage-0'],
+                        plugins: ['transform-runtime', 'transform-decorators-legacy']
+                    }
                 }],
                 exclude: /node_modules/,  // 优化babel 排除
                 include: path.join(commonPath.src),   //优化babel 打包范围
@@ -48,7 +54,7 @@ module.exports = {
                 // }, {
                 //     loader: 'babel-loader',
                 //     options: {
-                //         presets: [['es2015', {modules: false}], 'react']
+                //         presets: [['es2015', {modules: false}], 'react', 'stage-0']
                 //     }
                 // }]
             },
