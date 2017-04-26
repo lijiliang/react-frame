@@ -5,7 +5,6 @@ React开发SPA脚手架。 Webapck / ES6 + Babel / Redux / React Router
 
 > ### 更新
 > 2017/4/24 &nbsp; 引入 `cross-env` 解决跨平台问题
-
 > 2017/4/26 &nbsp; 增加对`favicon`文件的支持
 
 ## 快速开始
