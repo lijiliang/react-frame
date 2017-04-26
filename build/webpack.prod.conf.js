@@ -67,7 +67,7 @@ config.plugins.push(
     // 构建优化插件
     new webpack.optimize.CommonsChunkPlugin({
         // 公共代码分离打包
-        name: ['vendor']
+        names: ['vendor']
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.MinChunkSizePlugin({

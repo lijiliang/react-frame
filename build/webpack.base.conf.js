@@ -49,8 +49,29 @@ module.exports = {
                 include: path.join(commonPath.src),   //优化babel 打包范围
             },
             {
+                test: /\.html$/,
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        attrs: ['img:src', 'link:href']
+                    }
+                }]
+            },
+            {
+                // 匹配favicon.png
+                test: /favicon\.png$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name]-[hash:8].[ext]'
+                    }
+                }]
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
+                // 排除favicon.png, 因为它已经由上面的loader处理了. 如果不排除掉, 它会被这个loader再处理一遍
+                exclude: /favicon\.png$/,
                 query: {
                     limit: 10240, // 10KB 以下使用 base64
                     name: 'img/[name]-[hash:8].[ext]'
