@@ -99,3 +99,4 @@ npm run build
 [redux-doc]: http://camsong.github.io/redux-in-chinese/index.html
 [react-router-doc]: http://react-guide.github.io/react-router-cn/
 [hot-loader]: https://github.com/gaearon/react-hot-loader
+[react-hot-loader]: https://github.com/gaearon/react-hot-loader/issues/218

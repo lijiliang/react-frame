@@ -4,7 +4,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const commonPath = require('./commonPath');   // 路径配置
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 
 module.exports = {
@@ -35,7 +34,6 @@ module.exports = {
     // 模块 - 各种加载器
     module: {
         rules: [
-            // https://github.com/gaearon/react-hot-loader/issues/218
             {
                 test: /\.(js|jsx)$/,
                 use: [{
@@ -49,14 +47,6 @@ module.exports = {
                 }],
                 exclude: /node_modules/,  // 优化babel 排除
                 include: path.join(commonPath.src),   //优化babel 打包范围
-                // use: [{
-                //     loader: 'react-hot-loader/webpack'
-                // }, {
-                //     loader: 'babel-loader',
-                //     options: {
-                //         presets: [['es2015', {modules: false}], 'react', 'stage-0']
-                //     }
-                // }]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
