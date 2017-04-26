@@ -13,7 +13,8 @@ module.exports = {
         /**
          * [vendor 框架 / 类库 分离打包]
          */
-        vendor: ['react', 'react-dom', 'lodash', 'redux', 'react-redux'],
+        vendor: path.join(commonPath.src, 'vendor.js')
+        // vendor: ['react', 'react-dom', 'history', 'lodash', 'redux', 'react-redux'],
     },
     output: {
         path: path.join(commonPath.dist, 'static'),
