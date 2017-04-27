@@ -5,7 +5,6 @@ const path = require('path');
 const webpack = require('webpack');
 const commonPath = require('./commonPath');   // 路径配置
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-
 module.exports = {
     entry: {
         app: path.join(commonPath.src, 'app.js'),
@@ -28,7 +27,8 @@ module.exports = {
             /**
              * 自定义路径别名
              */
-            jquery: 'jquery'
+            jquery: 'jquery',
+            '~': path.join(commonPath.src)
         }
     },
     // 模块 - 各种加载器
@@ -90,6 +90,18 @@ module.exports = {
     // 插件
     plugins: [
         // 进度条
-        new NyanProgressPlugin()
+        new NyanProgressPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': { // 这是给 React / Redux 打包用的
+                NODE_ENV: JSON.stringify('production')
+            },
+            // ================================
+            // 配置开发全局常量
+            // ================================
+            __DEV__: commonPath.env === 'development',
+            __PROD__: commonPath.env === 'production',
+            __COMPONENT_DEVTOOLS__: false, // 是否使用组件形式的 Redux DevTools
+            __WHY_DID_YOU_UPDATE__: false  // 是否检测不必要的组件重渲染
+        })
     ]
 };
