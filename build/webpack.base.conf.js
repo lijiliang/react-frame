@@ -92,7 +92,7 @@ module.exports = {
     plugins: [
         // 进度条
         new NyanProgressPlugin(),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env': { // 这是给 React / Redux 打包用的
                 NODE_ENV: JSON.stringify('production')
