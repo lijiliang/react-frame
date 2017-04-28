@@ -64,11 +64,13 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
-    "redux": "^3.6.0",
-    "lodash": "^4.17.4"
+    "react-router-config": "^1.0.0-beta.3",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0"
   }
 }
