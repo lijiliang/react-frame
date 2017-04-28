@@ -10,6 +10,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');  // 用于清理目录文件
 const SOURCE_MAP = false;
 
 // 环境变量获取方法  process.env.NODE_ENV
@@ -46,6 +47,11 @@ config.module.rules.push(
 
 // webpack插件配置
 config.plugins.push(
+    new CleanWebpackPlugin(['dist'], {   // 清空生成目录
+        root: path.resolve(__dirname, '..'),
+        verbose: true,
+        dry: false,
+    }),
     // 删除重复数据
     new webpack.DefinePlugin({
         'process.env': {

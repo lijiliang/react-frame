@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const commonPath = require('./commonPath');   // 路径配置
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
+
 module.exports = {
     entry: {
         app: path.join(commonPath.src, 'app.js'),
@@ -73,7 +74,7 @@ module.exports = {
                 // 排除favicon.png, 因为它已经由上面的loader处理了. 如果不排除掉, 它会被这个loader再处理一遍
                 exclude: /favicon\.png$/,
                 query: {
-                    limit: 10240, // 10KB 以下使用 base64
+                    limit: 4096, // 4KB 以下使用 base64
                     name: 'img/[name]-[hash:8].[ext]'
                 }
             },
@@ -81,7 +82,7 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 query: {
-                    limit: 10240,
+                    limit: 4096,
                     name: 'fonts/[name]-[hash:8].[ext]'
                 }
             }
