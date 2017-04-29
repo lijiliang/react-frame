@@ -2,10 +2,10 @@
 
 React开发SPA脚手架。 Webapck / ES6 + Babel / Redux / React Router
 
-
-> ### 更新
-> 2017/4/24 &nbsp; 引入 `cross-env` 解决跨平台问题
-> 2017/4/26 &nbsp; 增加对`favicon`文件的支持
+### 更新
+* 2017/4/24 &nbsp; 引入 `cross-env` 解决跨平台问题
+* 2017/4/26 &nbsp; 增加对`favicon`文件的支持
+* 2017/4/27 &nbsp; 增加四个环境变量：`__DEV__`、`__PROD__`、`__COMPONENT_DEVTOOLS__`、`__WHY_DID_YOU_UPDATE__`
 
 ## 快速开始
 在开始前，希望您已通读如下资料
@@ -63,6 +63,18 @@ npm run build
 ├── package.json     #  npm包配置文件
 ```
 
+## 特色
+* 简明的目录结构，更好的模块分离
+* 区分开发环境与生产环境 
+* 生产环境entry文件输出加上hash值
+* 第三方库与业务代码分开打包
+* 配置favicon
+* 引入[React Hot Reload][hot-loader],支持热替换
+* 引入 [路径别名] 简化import路径,实现优雅的加载模式
+* [Redux Logger][redux-logger] 打印动作及前后状态变化
+* 利用[postcss-loader]为各个浏览器自动加前缀
+
+
 ## 技术栈
 > 详情可参阅 `package.json`
 
@@ -73,6 +85,16 @@ npm run build
 * Webpack
 * ES6 + Babel
 * jQuery + BootStrap (UI)
+
+***
+## 开发 
+* **路径别名** 的定义位于 `build/webpack.base.conf.js`，好处就是**引入与重构都很方便**
+> 例如，在某组件中，引入 `userService` 需要 `import userService from '../../../services/userService'`  
+> 但有了路径别名后，只需要 `import userService from 'SERVICE/userService'`  
+
+* 开发环境**全局变量**，由 `webpack.DefinePlugin` 提供（详见 `build/webpack.base.conf.js`）
+> 默认有 `__DEV__` / `__PROD__` / `__COMPONENT_DEVTOOLS__` / `__WHY_DID_YOU_UPDATE__` 四个全局变量  
+***
 
 ***
 ## 部署
@@ -103,4 +125,8 @@ npm run build
 [react-hot-loader]: https://github.com/gaearon/react-hot-loader/issues/218
 [webpack 2 打包实战]: http://www.tuicool.com/articles/QJJRrmJ
 [webpack-in-action]:  https://github.com/fenivana/webpack-in-action
+<<<<<<< HEAD
 [html-webpack-plugin]: https://zengxiaotao.github.io/2016/10/26/html-webpack-plugin-%E7%94%A8%E6%B3%95/
+=======
+[webpack-redux参考]： https://github.com/hyy1115/react-redux-webpack
+>>>>>>> 5063f92b92b4a147066860e7b0419bcb997b31d3

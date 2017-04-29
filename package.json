@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node build/dev.js",
-    "build": "cross-env NODE_ENV=development node build/prod.js",
+    "build": "cross-env NODE_ENV=production node build/prod.js",
     "dev": "cross-env NODE_ENV=development webpack --config ./build/webpack.dev.conf.js",
     "prod": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.conf.js"
   },
@@ -32,6 +32,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "clean-webpack-plugin": "^0.1.16",
     "connect-history-api-fallback": "^1.3.0",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
@@ -63,11 +64,13 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
-    "redux": "^3.6.0",
-    "lodash": "^4.17.4"
+    "react-router-config": "^1.0.0-beta.3",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0"
   }
 }
