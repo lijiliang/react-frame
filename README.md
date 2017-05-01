@@ -65,7 +65,7 @@ npm run build
 
 ## 特色
 * 简明的目录结构，更好的模块分离
-* 区分开发环境与生产环境 
+* 区分开发环境与生产环境
 * 生产环境entry文件输出加上hash值
 * 第三方库与业务代码分开打包
 * 配置favicon
@@ -87,7 +87,7 @@ npm run build
 * jQuery + BootStrap (UI)
 
 ***
-## 开发 
+## 开发
 * **路径别名** 的定义位于 `build/webpack.base.conf.js`，好处就是**引入与重构都很方便**
 > 例如，在某组件中，引入 `userService` 需要 `import userService from '../../../services/userService'`  
 > 但有了路径别名后，只需要 `import userService from 'SERVICE/userService'`  
@@ -125,8 +125,5 @@ npm run build
 [react-hot-loader]: https://github.com/gaearon/react-hot-loader/issues/218
 [webpack 2 打包实战]: http://www.tuicool.com/articles/QJJRrmJ
 [webpack-in-action]:  https://github.com/fenivana/webpack-in-action
-<<<<<<< HEAD
 [html-webpack-plugin]: https://zengxiaotao.github.io/2016/10/26/html-webpack-plugin-%E7%94%A8%E6%B3%95/
-=======
-[webpack-redux参考]： https://github.com/hyy1115/react-redux-webpack
->>>>>>> 5063f92b92b4a147066860e7b0419bcb997b31d3
+[webpack-redux参考]: https://github.com/hyy1115/react-redux-webpack
