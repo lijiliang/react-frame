@@ -24,9 +24,18 @@ export default class Routes extends Component {
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/topics" component={Topics}/>
                     <Route path="/topics/:id" component={TopicsChild}/>
-                    <Route component={NoMactch}/>
+                    <Route component={NoMactch}/> {/*匹配404 放在最下面*/}
                 </Switch>
             </SlideComponent>
         );
     }
 }
+
+ /*
+   当前路由树如下
+   ├ /
+   ├ /about
+   ├ /topics
+   ├ /topics/:id
+   ├ /404       如路由不存在会自动跳转到404页面
+ */

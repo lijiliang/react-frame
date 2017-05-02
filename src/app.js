@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Router, Route} from 'react-router-dom';
+import { BrowserRouter, Router, Route, HashRouter} from 'react-router-dom';
 import Routes from './routes';
 
 if(__DEV__){
@@ -11,7 +11,7 @@ if(__PROD__){
 }
 
 ReactDOM.render((
-    <BrowserRouter>
+    <BrowserRouter >
         <Routes/>
     </BrowserRouter>
 ), document.getElementById('root'));

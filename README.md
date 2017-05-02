@@ -73,6 +73,11 @@ npm run build
 * 引入 [路径别名] 简化import路径,实现优雅的加载模式
 * [Redux Logger][redux-logger] 打印动作及前后状态变化
 * 利用[postcss-loader]为各个浏览器自动加前缀
+* 利用React-router V4.4作为前端路由
+* less
+* webpack2
+* ES6/7
+* redux
 
 
 ## 技术栈

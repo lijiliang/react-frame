@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class SlideComponent extends React.Component {
     constructor(props){
@@ -12,7 +12,7 @@ class SlideComponent extends React.Component {
                 <div className="main">
                     <ul>
                       <li><Link to="/">首页</Link></li>
-                      <li><Link to="/about">关于</Link></li>
+                      <li><NavLink to="/about" activeClassName="selected">关于</NavLink></li>
                       <li><Link to="/topics">主题列表</Link></li>
                     </ul>
                 </div>
