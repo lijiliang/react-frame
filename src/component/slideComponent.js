@@ -8,7 +8,7 @@ class SlideComponent extends React.Component {
     render(){
         return(
             <div className="wrpper">
-                <div>header ~~~~~</div>
+                <div>header</div>
                 <div className="main">
                     <ul>
                       <li><Link to="/">首页</Link></li>
@@ -19,7 +19,7 @@ class SlideComponent extends React.Component {
                 <div className="m-content">
                     {this.props.children}
                 </div>
-                <div>footer ~~~~~</div>
+                <div>footer</div>
             </div>
         );
     }
