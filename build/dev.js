@@ -9,14 +9,17 @@ const history = require('connect-history-api-fallback');
 const config = require('./webpack.dev.conf');
 const commonPath = require('./commonPath');
 
+const apiProxy = proxy('/bookzw', {target: 'http://api.youmeixun.com', changeOrigin: true});
 
 const app = express();
-
+app.use('/bookzw/*', apiProxy);
 const compiler = webpack(config);
 
 app.use('/static', express.static(commonPath.staticDir));
 
-app.use('/api', proxy({target: 'http://api.youmeixun.com', changeOrigin: true}));
+//http://www.cnblogs.com/MonaSong/p/6555342.html
+//app.use('/bookzw/*', proxy({target: 'http://api.youmeixun.com', changeOrigin: true}));
+//app.use('/bookzw/*', apiProxy);  //api子目录下的都是用代理
 
 // 处理HTML5历史记录API回退的问题
 app.use(history());

@@ -59,9 +59,9 @@ class Home extends React.Component {
         }
         const getIndex = async () => {
             try{
-                const response = await getData(`http://localhost:9090/api/bookzw/catalog`);
+                const response = await getData(`/bookzw/catalog`);
                 await response;
-                console.log(response);
+                console.log(response.data);
             }catch(err){
                 console.log(err);
             }
