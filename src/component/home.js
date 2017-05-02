@@ -27,6 +27,8 @@ class Home extends React.Component {
         //         console.log('error: ', error)
         //     }
         // }
+
+        /*
         async function myFunction(){
             try{
                 const response = await getData(`http://api.didadi.fm/index.php`, data);
@@ -37,6 +39,7 @@ class Home extends React.Component {
             }
         }
         myFunction();
+        */
 
         /*
         const getIndex = async () => {
@@ -50,20 +53,20 @@ class Home extends React.Component {
         }
         getIndex();
         */
-        // const ledata = {
-        //     ti: 1,
-        //     ft: 'Category'
-        // }
-        // const getIndex = async () => {
-        //     try{
-        //         const response = await getData(`http://api.youmeixun.com/bookzw/catalog`);
-        //         await response;
-        //         console.log(response);
-        //     }catch(err){
-        //         console.log(err);
-        //     }
-        // }
-        // getIndex();
+        const ledata = {
+            ti: 1,
+            ft: 'Category'
+        }
+        const getIndex = async () => {
+            try{
+                const response = await getData(`http://localhost:9090/api/bookzw/catalog`);
+                await response;
+                console.log(response);
+            }catch(err){
+                console.log(err);
+            }
+        }
+        getIndex();
     }
 
     componentWillUnmount () {
