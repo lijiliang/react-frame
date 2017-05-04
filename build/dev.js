@@ -9,21 +9,20 @@ const history = require('connect-history-api-fallback');
 const config = require('./webpack.dev.conf');
 const commonPath = require('./commonPath');
 
-const apiProxy = proxy('/bookzw', {target: 'http://api.youmeixun.com', changeOrigin: true});
-
 const app = express();
-app.use('/bookzw/*', apiProxy);
+
+// 设置代理
+const apiProxy = proxy('/bookzw', {target: 'http://api.youmeixun.com', changeOrigin: true});
+app.use('/bookzw/*', apiProxy); //api子目录下的都是用代理
+
 const compiler = webpack(config);
 
 app.use('/static', express.static(commonPath.staticDir));
 
-//http://www.cnblogs.com/MonaSong/p/6555342.html
-//app.use('/bookzw/*', proxy({target: 'http://api.youmeixun.com', changeOrigin: true}));
-//app.use('/bookzw/*', apiProxy);  //api子目录下的都是用代理
-
 // 处理HTML5历史记录API回退的问题
 app.use(history());
 
+// 使用 webpack-dev-middleware 中间件
 app.use(webpackDevMiddleware(compiler, {
     hot: true,
     stats: { colors: true },
@@ -34,6 +33,6 @@ app.use(webpackDevMiddleware(compiler, {
 // 热重载
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.listen(9000, '127.0.0.1', function(err){
+app.listen(9000, function(err){
     err && console.log(err);
 });

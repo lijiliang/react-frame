@@ -53,8 +53,7 @@ config.plugins.push(
     new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',   //指定公共bundle名字
         minChunks: Infinity, // 随着 入口chunk 越来越多，这个配置保证没其它的模块会打包进 公共chunk
-    })
-    /*
+    }),
     new BrowserSyncPlugin({
         host: '127.0.0.1',
         port: 9090,
@@ -65,6 +64,5 @@ config.plugins.push(
         // 防止sync自动加载页面，直接让webpack dev server 来处理
         reload: false
     })
-    */
 );
 module.exports = config;

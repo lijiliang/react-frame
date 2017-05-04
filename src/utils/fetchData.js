@@ -14,7 +14,6 @@ import axios from 'axios';
  * @return {[object]}       [返回成功或失败的数据]
  */
 export const getData = (url, param) => {
-    console.log(url, param)
     return (
         axios.get(`${url}`, {
             params: param
