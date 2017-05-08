@@ -7,12 +7,12 @@ const commonPath = require('./commonPath');   // 路径配置
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const SOURCE_MAP = false;
+const SOURCE_MAP = true;
 
 // 配置config
 config.output.filename = '[name].js';
 config.output.chunkFilename = '[id].js';
-config.devtool = SOURCE_MAP ? 'eval-source-map' : false;
+config.devtool = SOURCE_MAP ? 'eval-source-map' : false;  //错以后就会采用source-map的形式直接显示出错代码的位置
 config.output.publicPath = '/';
 
 // 添加热重载相关的代码
