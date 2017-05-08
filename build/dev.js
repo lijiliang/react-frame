@@ -24,7 +24,7 @@ app.use(history());
 
 // 使用 webpack-dev-middleware 中间件
 app.use(webpackDevMiddleware(compiler, {
-    hot: true,
+    hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
     stats: { colors: true },
     noInfo: true,
     publicPath: config.output.publicPath
